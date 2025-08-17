@@ -1,0 +1,311 @@
+/* Blog Detay Sayfası Stilleri */
+.blog-detail-header {
+    background: var(--gradient-primary);
+    padding: 60px 0;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.blog-detail-header .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.blog-category {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.blog-title {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.blog-meta {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.meta-item i {
+    opacity: 0.8;
+}
+
+/* Blog İçerik Alanı */
+.blog-detail-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.featured-image-container {
+    margin: -100px auto 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.featured-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.blog-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+}
+
+.blog-content h2 {
+    font-size: 1.8rem;
+    margin: 40px 0 20px;
+    color: var(--text-dark);
+}
+
+.blog-content h3 {
+    font-size: 1.4rem;
+    margin: 30px 0 15px;
+    color: var(--text-dark);
+}
+
+.blog-content p {
+    margin-bottom: 20px;
+}
+
+.blog-content ul {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.blog-content li {
+    margin-bottom: 10px;
+}
+
+/* Paylaşım Butonları */
+.share-buttons {
+    margin: 60px 0;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+.share-buttons h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.share-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.share-btn.twitter {
+    background: #1DA1F2;
+    color: white;
+}
+
+.share-btn.linkedin {
+    background: #0077B5;
+    color: white;
+}
+
+.share-btn.facebook {
+    background: #4267B2;
+    color: white;
+}
+
+.share-btn.copy-link {
+    background: var(--surface-secondary);
+    color: var(--text-primary);
+}
+
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .blog-title {
+        font-size: 2rem;
+    }
+
+    .blog-meta {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .featured-image-container {
+        margin-top: -60px;
+    }
+
+    .share-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Benzer Yazılar Bölümü */
+.related-posts {
+    margin: 80px 0;
+    padding-top: 60px;
+    border-top: 1px solid var(--border-color);
+}
+
+.related-posts .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.related-posts h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.related-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Blog Kartı Stilleri */
+.related-posts .blog-card {
+    background: var(--surface);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.related-posts .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.related-posts .blog-image {
+    position: relative;
+    padding-top: 60%;
+    overflow: hidden;
+}
+
+.related-posts .blog-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.related-posts .blog-card:hover .blog-image img {
+    transform: scale(1.05);
+}
+
+.related-posts .blog-content {
+    padding: 24px;
+}
+
+.related-posts .blog-category {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.related-posts .blog-title {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.related-posts .blog-excerpt {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.related-posts .blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 0.75rem;
+    color: var(--text-light);
+}
+
+.related-posts .read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 0.875rem;
+    text-decoration: none;
+    margin-top: 16px;
+    transition: gap 0.3s ease;
+}
+
+.related-posts .read-more:hover {
+    gap: 12px;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .related-posts {
+        margin: 60px 0;
+        padding-top: 40px;
+    }
+
+    .related-posts h2 {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    .related-posts-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+} 

@@ -1,0 +1,145 @@
+.solutions-hero {
+    padding: 8rem 0 4rem;
+    background: linear-gradient(135deg, rgba(99,102,241,0.1) 0%, rgba(14,165,233,0.1) 100%);
+    text-align: center;
+}
+
+.solutions-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.solutions-grid {
+    padding: 6rem 0;
+}
+
+.solution-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.solution-card {
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.solution-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.solution-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.solution-icon i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.solution-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.solution-features {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.solution-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-light);
+}
+
+.solution-features i {
+    color: var(--primary);
+}
+
+.learn-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: gap 0.3s ease;
+}
+
+.learn-more:hover {
+    gap: 0.75rem;
+}
+
+.case-studies {
+    padding: 6rem 0;
+    background: var(--surface);
+}
+
+.case-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.case-card {
+    background: var(--background);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.case-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.case-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.case-content {
+    padding: 1.5rem;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .solutions-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .solutions-grid {
+        padding: 3rem 0;
+    }
+
+    .solution-cards {
+        grid-template-columns: 1fr;
+    }
+} 

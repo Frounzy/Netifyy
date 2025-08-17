@@ -1,0 +1,45 @@
+Müşteri Başarı Hikayeleri:
+
+        <section class="success-stories">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">BAŞARI HİKAYELERİ</span>
+                    <h2>Müşterilerimizin Başarıları</h2>
+                </div>
+
+                <div class="stories-grid">
+                    <div class="story-card">
+                        <div class="story-image">
+                            <img src="../assets/images/success-1.jpg" alt="Başarı Hikayesi 1">
+                        </div>
+                        <div class="story-content">
+                            <h3>ModaViva</h3>
+                            <p>"Netify ile satışlarımız %150 arttı. Yapay zeka destekli özellikler sayesinde müşteri deneyimimiz tamamen değişti."</p>
+                            <span class="story-author">Ayşe Yılmaz, Kurucu</span>
+                        </div>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">
+                            <img src="../assets/images/success-2.jpg" alt="Başarı Hikayesi 2">
+                        </div>
+                        <div class="story-content">
+                            <h3>TechStore</h3>
+                            <p>"6 ayda 3 kat büyüdük. Netify'ın pazaryeri entegrasyonları sayesinde tüm satış kanallarımızı tek panelden yönetiyoruz."</p>
+                            <span class="story-author">Mehmet Kaya, CEO</span>
+                        </div>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">
+                            <img src="../assets/images/success-3.jpg" alt="Başarı Hikayesi 3">
+                        </div>
+                        <div class="story-content">
+                            <h3>OrganikPazar</h3>
+                            <p>"SEO optimizasyonları ve pazarlama araçları sayesinde organik trafiğimiz %200 arttı."</p>
+                            <span class="story-author">Zeynep Demir, Pazarlama Direktörü</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

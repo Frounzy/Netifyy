@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netify - Modern Dijital Pazarlama Çözümleri</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+
+
+<body>
+    <style>
+/* ...diğer stilleriniz... */
+
+/* ...diğer kodlarınızın sonuna ekleyin... */
+
+.strategy-network-box {
+  /* ...mevcut stilleriniz... */
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  animation: boxFadeIn 0.9s cubic-bezier(.4,2,.6,1) forwards;
+  /* Her kutuya ayrı delay verilecek */
+}
+.strategy-network-box.smartsocial {
+  animation-delay: 0.2s;
+}
+.strategy-network-box.getsmarty {
+  animation-delay: 0.4s;
+}
+.strategy-network-box.smartqr {
+  animation-delay: 0.6s;
+}
+.strategy-network-box.smartmeeting {
+  animation-delay: 0.8s;
+}
+
+@keyframes boxFadeIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.strategy-network-section {
+  background: #faf9ff;
+  padding: 6rem 0 7rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.strategy-network-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.strategy-network-svg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;
+  z-index: 1;
+}
+.strategy-network-box {
+  position: absolute;
+  background: #fff;
+  border: 2px solid #f3eaff;
+  border-radius: 20px;
+  color: #23213a;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.7rem 1.2rem;
+  box-shadow: 0 4px 32px #c7b6ff33;
+  z-index: 2;
+  text-align: center;
+  letter-spacing: 0.5px;
+  opacity: 1;
+  transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+  backdrop-filter: blur(2px);
+  min-width: 120px;
+  max-width: 160px;
+  word-break: break-word;
+}
+.smartsocial { top: 90px; left: 24px; }
+.smartqr { top: 90px; right: 24px; }
+.getsmarty { bottom: 90px; left: 24px; }
+.smartmeeting { bottom: 90px; right: 24px; }
+
+.strategy-network-center {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 8px 48px #c7b6ff33;
+  padding: 2.2rem 1.2rem 1.5rem 1.2rem;
+  text-align: center;
+  z-index: 3;
+  min-width: 280px;
+  max-width: 95vw;
+  border: 2px solid #f3eaff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.strategy-network-icon {
+  background: linear-gradient(120deg,#7C3AFF 60%,#9747FF 100%);
+  color: #fff;
+  font-size: 2.2rem;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.1rem auto;
+  box-shadow: 0 2px 16px #c7b6ff33;
+}
+.strategy-network-center h2 {
+  color: #181028;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+.strategy-network-center p {
+  color: #444;
+  font-size: 1.02rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+.strategy-network-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 1.2rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  background: linear-gradient(90deg,#7C3AFF 60%,#9747FF 100%);
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px #c7b6ff33;
+}
+.strategy-network-btn:hover {
+  background: linear-gradient(90deg,#5D28FF 60%,#7C3AFF 100%);
+  color: #fff;
+  box-shadow: 0 4px 24px #c7b6ff33;
+}
+
+/* Responsive düzenlemeler */
+@media (max-width: 900px) {
+  .strategy-network-container {
+    min-height: 420px;
+  }
+  .smartsocial, .getsmarty { left: 8px; }
+  .smartqr, .smartmeeting { right: 8px; }
+  .smartsocial, .smartqr { top: 40px; }
+  .getsmarty, .smartmeeting { bottom: 40px; }
+  .strategy-network-center {
+    min-width: 180px;
+    max-width: 99vw;
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  }
+  .strategy-network-center h2 { font-size: 1rem; }
+  .strategy-network-center p { font-size: 0.95rem; }
+  .strategy-network-box {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.7rem;
+    min-width: 90px;
+    max-width: 120px;
+  }
+  .strategy-network-icon {
+    font-size: 1.2rem;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 0.7rem;
+  }
+}
+@media (max-width: 600px) {
+  .strategy-network-section { padding: 1.5rem 0 2rem 0; }
+  .strategy-network-container { min-height: 260px; }
+  .smartsocial, .getsmarty, .smartqr, .smartmeeting {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+    min-width: 70px;
+    max-width: 90px;
+    border-radius: 12px;
+  }
+  .smartsocial, .smartqr { top: 10px; }
+  .getsmarty, .smartmeeting { bottom: 10px; }
+  .strategy-network-center {
+    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+    min-width: 120px;
+    max-width: 99vw;
+    border-radius: 18px;
+  }
+  .strategy-network-center h2 { font-size: 0.95rem; }
+  .strategy-network-center p { font-size: 0.85rem; }
+  .strategy-network-icon {
+    font-size: 1rem;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0.4rem;
+  }
+  .strategy-network-btn {
+    font-size: 0.92rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.7rem;
+  }
+}
+
+.advanced-solutions-section {
+  background: linear-gradient(120deg, #f8f8fc 60%, #faf9ff 100%);
+  padding: 5rem 0 6rem 0;
+  position: relative;
+  z-index: 1;
+}
+.advanced-solutions-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.advanced-solutions-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.advanced-solutions-header h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 1.2rem;
+  letter-spacing: -1px;
+  color: #181028;
+}
+.advanced-solutions-header p {
+  color: #444;
+  font-size: 1.18rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-weight: 500;
+}
+.advanced-solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(2,1fr);
+  gap: 2.2rem;
+}
+.solution-card.modern {
+  background: #fff;
+  color: #23213a;
+  border-radius: 1.7rem;
+  box-shadow: 0 8px 40px #7c3aff0d, 0 1.5px 8px #c7b6ff22;
+  padding: 2.5rem 2.2rem 2.2rem 2.2rem;
+  border: 1.5px solid #ede9fe;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 260px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+  animation: cardFadeIn 1s cubic-bezier(.4,2,.6,1) both;
+}
+.solution-card.modern:hover {
+  box-shadow: 0 16px 48px #7c3aff22, 0 2px 12px #c7b6ff22;
+  border: 1.5px solid #bbaaff;
+  transform: translateY(-6px) scale(1.03);
+}
+.solution-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #23213a;
+  margin-bottom: 1.1rem;
+}
+.solution-icon {
+  background: linear-gradient(120deg,#7C3AFF 60%,#9747FF 100%);
+  color: #fff;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px #7c3aff22;
+}
+.solution-card p {
+  color: #444;
+  font-size: 1.08rem;
+  margin-bottom: 0.7rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+.calendar-demo {
+  margin-top: 1.2rem;
+  background: #f3f0ff;
+  border-radius: 1rem;
+  padding: 0.7rem 1rem;
+  overflow-x: auto;
+  border: 1px solid #ede9fe;
+}
+.calendar-demo table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #7c3aff;
+  font-size: 0.98rem;
+}
+.calendar-demo th,
+.calendar-demo td {
+  padding: 0.3rem 0.5rem;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+.calendar-demo th {
+  color: #7c3aff;
+  font-weight: 700;
+  background: none;
+}
+.calendar-demo td {
+  background: rgba(124,58,255,0.07);
+  color: #23213a;
+}
+.code-card pre {
+  background: #f3f0ff;
+  color: #7c3aff;
+  border-radius: 1rem;
+  padding: 1rem 1.2rem;
+  font-size: 0.98rem;
+  margin-top: 1.2rem;
+  overflow-x: auto;
+  border: 1px solid #ede9fe;
+}
+.code-card code {
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+  color: #7c3aff;
+}
+.crm-demo {
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.7rem;
+}
+.crm-chart {
+  width: 60px;
+  height: 32px;
+  border-radius: 0.7rem;
+  background: linear-gradient(120deg,#7C3AFF 60%,#9747FF 100%);
+  position: relative;
+  box-shadow: 0 2px 12px #7C3AFF33;
+}
+.crm-label {
+  color: #7c3aff;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+@keyframes cardFadeIn {
+  0% { opacity: 0; transform: translateY(40px) scale(0.98);}
+  100% { opacity: 1; transform: none;}
+}
+@media (max-width: 900px) {
+  .advanced-solutions-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 1.5rem;
+  }
+  .solution-card.modern { min-height: 0; }
+}
+@media (max-width: 600px) {
+  .advanced-solutions-header h2 { font-size: 1.2rem; }
+  .advanced-solutions-header p { font-size: 0.98rem; }
+  .solution-card.modern { padding: 1.2rem 0.7rem; }
+}
+
+/* ...diğer kodlarınızın sonuna ekleyin... */
+
+/* ...diğer kodlarınızın sonuna ekleyin... */
+
+.strategy-network-box {
+  /* ...mevcut stilleriniz... */
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  animation: boxFadeIn 0.9s cubic-bezier(.4,2,.6,1) forwards;
+  /* Her kutuya ayrı delay verilecek */
+}
+.strategy-network-box.smartsocial {
+  animation-delay: 0.2s;
+}
+.strategy-network-box.getsmarty {
+  animation-delay: 0.4s;
+}
+.strategy-network-box.smartqr {
+  animation-delay: 0.6s;
+}
+.strategy-network-box.smartmeeting {
+  animation-delay: 0.8s;
+}
+
+@keyframes boxFadeIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Başvuru formu için ek stiller */
+#application-modal .primary-btn {
+  background: linear-gradient(90deg,#7C3AFF 60%,#9747FF 100%);
+  color: #fff;
+  border: none;
+  border-radius: 1rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 1.1rem 0;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 12px #c7b6ff33;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+#application-modal .primary-btn:hover {
+  background: linear-gradient(90deg,#5D28FF 60%,#7C3AFF 100%);
+}
+#application-modal input,
+#application-modal textarea {
+  border: 1.5px solid #e5dbff;
+  border-radius: 1rem;
+  padding: 1.1rem 1.2rem;
+  font-size: 1.08rem;
+  background: #faf9ff;
+  transition: border 0.2s;
+}
+#application-modal input:focus,
+#application-modal textarea:focus {
+  border-color: #7C3AFF;
+  outline: none;
+}
+</style>
+    <!-- Üst Bilgi Çubuğu -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <p>⚡ Dijital Pazarlama Stratejinizi Netify ile Güçlendirin, İlk 1 Ay Ücretsiz!</p>
+                <div class="top-bar-actions">
+                    <a href="tel:08502551839">0850 255 18 39</a>
+                    <a href="/iletisim" class="contact-link">Sizi Arayalım</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ana Navbar -->
+<nav class="navbar glass-morphism">
+    <div class="container">
+        <div class="navbar-content">
+            <a href="../index.html" class="logo">
+                <img src="assets/favicon.svg" alt="Netify Logo"> Netify
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Ana Sayfa</a>
+                <a href="pages/about.html">Hakkımızda</a>
+                <a href="pages/marketing.html">Dijital Pazarlama</a>
+                <a href="pages/blog.html" >Projeler</a>
+               
+            </div>
+            <div class="nav-buttons">
+                <a href="contact.html" class="primary-btn desktop-only">İletişim</a>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <!-- Sol taraf -->
+                <div class="hero-content">
+                    <div class="badge">
+                        <i class="fas fa-rocket badge-icon"></i>
+                        <span>Yeni</span>
+                        <span>Yapay Zeka Destekli Pazarlama Asistanı</span>
+                    </div>
+                    
+                    <h1>Geleceğin<br><span class="gradient-text">Dijital Pazarlama</span><br>Deneyimi</h1>
+                    
+                    <p class="hero-description">
+                        Yapay zeka destekli kampanya yönetimi, otomatik reklam optimizasyonu ve gelişmiş analitik çözümleriyle dijital pazarlamada fark yaratın.
+                    </p>
+                    
+                    <div class="cta-buttons">
+                        <a href="#" class="primary-btn">
+                            Hemen Başla
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#" class="secondary-btn">
+                            <i class="fas fa-play"></i>
+                            Demo İzle
+                        </a>
+                    </div>
+                    
+                    <div class="metrics">
+                        <div class="metric-item">
+                            <span class="metric-value">1000+</span>
+                            <span class="metric-label">Aktif Müşteri</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">%99.9</span>
+                            <span class="metric-label">Uptime</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">24/7</span>
+                            <span class="metric-label">Canlı Destek</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sağ taraf - Dashboard -->
+                <div class="dashboard-container">
+                    <h2 class="dashboard-title"></h2>
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon secure">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-label">Veri Güvenliği</div>
+                                <div class="stat-value">Aktif</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon success">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-label">Kampanya Başarı Oranı</div>
+                                <div class="stat-value success">+127%</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon online">
+                                <i class="fas fa-signal"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-label">Online</div>
+                                <div class="stat-value">99.9%</div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon time">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-label">Ortalama Yanıt Süresi</div>
+                                <div class="stat-value">2.5 dk</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+  <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">ÖZELLİKLER</span>
+                    <h2>Neden Netify Dijital Pazarlama?</h2>
+                    <p>Rakiplerinizden bir adım önde olmanızı sağlayacak dijital pazarlama özellikleri</p>
+                </div>
+
+                <div class="features-grid">
+                    <!-- Yapay Zeka Kartı -->
+                    <div class="feature-card">
+                        <div class="feature-icon ai-gradient">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Yapay Zeka Destekli Reklam</h3>
+                                 <p>Google, Meta ve diğer platformlarda otomatik reklam optimizasyonu</p>
+                <a href="#" class="feature-link" data-index="0">
+                    <span>Daha Fazla</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20">
+                        <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </a>
+            </div>
+            <!-- Analitik Kartı -->
+            <div class="feature-card">
+                <div class="feature-icon analytics-gradient">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 20V4m10 16V4M4 20h16" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>Gelişmiş Analitik</h3>
+                <p>Kampanya performansı ve müşteri davranış analizleri</p>
+                <a href="#" class="feature-link" data-index="1">
+                    <span>Daha Fazla</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20">
+                        <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </a>
+            </div>
+            <!-- SEO Optimizasyonu Kartı -->
+            <div class="feature-card">
+                <div class="feature-icon seo-gradient">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>SEO Optimizasyonu</h3>
+                <p>Otomatik SEO iyileştirmeleri ve arama motoru optimizasyonu</p>
+                <a href="#" class="feature-link" data-index="2">
+                    <span>Daha Fazla</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20">
+                        <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </a>
+            </div>
+            <!-- Entegrasyon Kartı -->
+            <div class="feature-card">
+                <div class="feature-icon integration-gradient">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>Kolay Entegrasyon</h3>
+                <p>Popüler reklam ve analiz platformları ile hızlı entegrasyon</p>
+                <a href="#" class="feature-link" data-index="3">
+                    <span>Daha Fazla</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20">
+                        <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </a>
+            </div>
+            <!-- Güvenlik Kartı -->
+            <div class="feature-card">
+                <div class="feature-icon security-gradient">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 15V17M6 21h12a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0013.586 3H6a2 2 0 00-2 2v14a2 2 0 002 2z" 
+                              stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M9 11a3 3 0 116 0 3 3 0 01-6 0z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>Gelişmiş Güvenlik</h3>
+                <p>Veri güvenliği, DDoS koruması ve gelişmiş güvenlik önlemleri</p>
+                <a href="#" class="feature-link" data-index="4">
+                    <span>Daha Fazla</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20">
+                        <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </a>
+            </div>
+            <!-- Destek Kartı -->
+            <div class="feature-card">
+                <div class="feature-icon support-gradient">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-4 4z" 
+                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>7/24 Canlı Destek</h3>
+                <p>Uzman ekibimizle kesintisiz teknik destek ve danışmanlık</p>
+                <a href="#" class="feature-link" data-index="5">
+                    <span>Daha Fazla</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20">
+                        <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <div id="feature-modal" class="feature-modal">
+  <div class="feature-modal-backdrop"></div>
+  <div class="feature-modal-content">
+    <button class="feature-modal-close" aria-label="Kapat"><i class="fas fa-times"></i></button>
+    <div class="feature-modal-body">
+      <h3 id="feature-modal-title"></h3>
+      <p id="feature-modal-desc"></p>
+    </div>
+  </div>
+</div>
+
+<section class="advanced-solutions-section">
+  <div class="advanced-solutions-container">
+    <div class="advanced-solutions-header">
+      <h2>
+        Dijital Potansiyelinizi Yükseltin, Müşterilerinizi Sadık Takipçilere Dönüştürün.
+      </h2>
+      <p>
+        Netify ile veriye dayalı pazarlama, yaratıcı içerik üretimi ve işinize özel dijital çözümlerle markanızı öne çıkarın. Akıllı CRM entegrasyonları ve etkili kampanya yönetimiyle, tüm süreçlerinizde hızlı ve güvenilir destek alın.
+      </p>
+    </div>
+  
+        
+        <section class="setup-steps">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Netify ile 4 Adımda Dijital Pazarlama Kampanyası Kurun</h2>
+                </div>
+                
+                <div class="steps-content">
+                    <!-- Sol Taraf - Adımlar -->
+                    <div class="steps-left">
+                        <div class="step-card active">
+                            <div class="step-header">
+                                <span class="step-number">1</span>
+                                <h3>Hedef Kitlenizi Belirleyin</h3>
+                            </div>
+                            <div class="step-content">
+                                Yapay zeka destekli analizlerle en doğru hedef kitleyi seçin
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-header">
+                                <span class="step-number">2</span>
+                                <h3>Kampanyanızı Tasarlayın</h3>
+                            </div>
+                            <div class="step-content">
+                                Kolay arayüz ile e-posta, SMS ve sosyal medya kampanyalarınızı oluşturun
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-header">
+                                <span class="step-number">3</span>
+                                <h3>Otomatik Optimizasyon</h3>
+                            </div>
+                            <div class="step-content">
+                                Netify'ın otomatik optimizasyon araçları ile maksimum verim alın
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-header">
+                                <span class="step-number">4</span>
+                                <h3>Sonuçları Analiz Edin</h3>
+                            </div>
+                            <div class="step-content">
+                                Gelişmiş raporlama ile kampanya performansınızı anlık takip edin
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf - Bildirimler -->
+                    <div class="steps-notifications">
+                        <!-- Bildirimler -->
+                        <div class="notification-card">
+                            <div class="notification-icon">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h3>Yeni kampanya yayında!</h3>
+                                <span class="notification-time">şimdi</span>
+                            </div>
+                        </div>
+
+                        <div class="notification-card">
+                            <div class="notification-icon">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h3>Size özel %20 bütçe bonusu!</h3>
+                                <span class="notification-time">şimdi</span>
+                            </div>
+                        </div>
+
+                        <div class="notification-card">
+                            <div class="notification-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h3>Kampanya getirisi</h3>
+                                <span class="notification-amount">₺245.653</span>
+                            </div>
+                        </div>
+
+                        <div class="notification-card">
+                            <div class="notification-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h3>Ortalama yanıt süresi</h3>
+                                <span class="notification-amount">2.5 dk</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ...Hero'dan hemen sonra ekleyin... -->
+
+
+
+
+        <section class="support-section">
+            <div class="container">
+                <div class="support-content">
+                    <div class="support-left">
+                        <h2 class="support-title">7/24 Pazarlama Desteği</h2>
+                        <h3 class="support-heading">Sorunuz mu var?<br>Hemen uzmanımıza ulaşın.</h3>
+                        
+                        <div class="support-actions">
+                            
+                                <!-- ...strategy-network-center içinde sadece bu olmalı... -->
+<a href="tel:05395707502" class="strategy-network-btn" id="open-application-modal">
+  Sizi Arıyalım <i class="fas fa-phone"></i>    
+</a>
+                           
+                            <a href="tel:05395707502" class="support-btn secondary">
+                                <span>0539 570 75 02</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="support-team-orbit">
+                        <div class="orbit-path"></div>
+                        
+                        <div class="team-member main">
+                            <div class="member-avatar">
+                                EG
+                                <span class="status-badge">😊</span>
+                            </div>
+                        </div>
+                        
+                        <div class="orbit-path">
+                            <div class="team-member">
+                                <div class="member-avatar">
+                                    TK
+                                    <span class="status-badge">👍</span>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-avatar">
+                                    AY
+                                    <span class="status-badge">⚡</span>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-avatar">
+                                    MK
+                                    <span class="status-badge">👍</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Diğer bölümler... -->
+    </main>
+
+    
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-grid">
+                <!-- Logo ve Sosyal Medya -->
+                <div class="footer-column footer-brand">
+                    <a href="/" class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="footer-logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#9747FF"/>
+                                        <stop offset="50%" style="stop-color:#7C3AFF"/>
+                                        <stop offset="100%" style="stop-color:#5D28FF"/>
+                                    </linearGradient>
+                                </defs>
+                                <path fill="url(#footer-logo-gradient)" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.2))"/>
+                            </svg>
+                        </div>
+                        <span class="footer-logo-text">Netify</span>
+                    </a>
+                    <p class="footer-description">
+                        Modern dijital pazarlama çözümleri ile markanızı büyütün. Yapay zeka destekli araçlar ve gelişmiş özelliklerle kampanyalarınızı optimize edin.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Ürün -->
+                <div class="footer-column">
+                    <h3>Ürünler</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Kampanya Yönetimi</a>
+                        <a href="#" class="footer-link">Raporlama</a>
+                        <a href="#" class="footer-link">Reklam Optimizasyonu</a>
+                        <a href="#" class="footer-link">API</a>
+                    </div>
+                </div>
+
+                <!-- Şirket -->
+                <div class="footer-column">
+                    <h3>Şirket</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Hakkımızda</a>
+                        <a href="#" class="footer-link">Blog</a>
+                        <a href="#" class="footer-link">Kariyer</a>
+                        <a href="#" class="footer-link">İletişim</a>
+                    </div>
+                </div>
+
+                <!-- Destek -->
+                <div class="footer-column">
+                    <h3>Destek</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Yardım Merkezi</a>
+                        <a href="#" class="footer-link">Dokümantasyon</a>
+                        <a href="#" class="footer-link">Durum Sayfası</a>
+                        <a href="#" class="footer-link">Güvenlik</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    © 2024 Netify. Tüm hakları saklıdır.
+                </div>
+                <div class="footer-meta">
+                    <a href="#" class="footer-meta-link">Gizlilik Politikası</a>
+                    <a href="#" class="footer-meta-link">Kullanım Şartları</a>
+                    <a href="#" class="footer-meta-link">KVKK</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript dosyaları -->
+       <script src="js/main.js"></script>
+    <script src="js/theme.js"></script>
+        <script>
+            const featureDetails = [
+  {
+    title: "Yapay Zeka Destekli Reklam",
+    desc: "Netify’ın yapay zeka algoritmaları ile reklam bütçenizi en verimli şekilde kullanın. Otomatik hedefleme, anlık optimizasyon ve platformlar arası performans takibi ile reklamlarınızdan maksimum dönüşüm alın."
+  },
+  {
+    title: "Gelişmiş Analitik",
+    desc: "Kampanya ve müşteri verilerinizi Netify’ın gelişmiş analitik panelinde detaylıca inceleyin. Segmentasyon, davranış analizi ve gerçek zamanlı raporlarla pazarlama stratejinizi güçlendirin."
+  },
+  {
+    title: "SEO Optimizasyonu",
+    desc: "Netify’ın otomatik SEO araçları ile siteniz arama motorlarında üst sıralara çıkar. Anahtar kelime önerileri, teknik analizler ve içerik optimizasyonu ile organik trafiğinizi artırın."
+  },
+  {
+    title: "Kolay Entegrasyon",
+    desc: "Google, Meta, LinkedIn ve daha birçok platform ile tek tıkla entegrasyon. API desteği ve hazır bağlantılar sayesinde tüm verilerinizi ve kampanyalarınızı merkezi olarak yönetin."
+  },
+  {
+    title: "Gelişmiş Güvenlik",
+    desc: "Veri güvenliğiniz Netify ile güvende. DDoS koruması, şifreli veri transferi ve sürekli güvenlik güncellemeleri ile tüm dijital varlıklarınızı koruyun."
+  },
+  {
+    title: "7/24 Canlı Destek",
+    desc: "Her an ulaşabileceğiniz uzman destek ekibimizle sorularınıza anında çözüm bulun. Netify ile teknik destek ve danışmanlık hizmeti her zaman yanınızda."
+  }
+];
+document.querySelectorAll('.feature-link').forEach((btn) => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const idx = parseInt(this.getAttribute('data-index'));
+    document.getElementById('feature-modal-title').textContent = featureDetails[idx].title;
+    document.getElementById('feature-modal-desc').textContent = featureDetails[idx].desc;
+    document.getElementById('feature-modal').classList.add('open');
+    setTimeout(() => document.querySelector('.feature-modal-content').classList.add('show'), 10);
+  });
+});
+document.querySelector('.feature-modal-close').onclick = closeModal;
+document.querySelector('.feature-modal-backdrop').onclick = closeModal;
+function closeModal() {
+  document.querySelector('.feature-modal-content').classList.remove('show');
+  setTimeout(() => document.getElementById('feature-modal').classList.remove('open'), 250);
+}
+        </script>
+
+        <!-- ...strategy-network-center içindeki görüşme planlayın butonunu 
+
+<!-- Başvuru formu modalı (body sonunda, sadece bir tane) -->
+<section id="application-modal" class="feature-modal">
+  <div class="feature-modal-backdrop"></div>
+  <div class="feature-modal-content" style="max-width:540px; min-width:320px; padding:2.5rem 2rem 2rem 2rem;">
+    <button class="feature-modal-close" aria-label="Kapat"><i class="fas fa-times"></i></button>
+    <div class="feature-modal-body">
+      <h3 style="text-align:center;margin-bottom:1.2rem;">İletişim Formu</h3>
+      <form id="application-form" autocomplete="off">
+        <div style="display:flex;flex-direction:column;gap:1.2rem;">
+          <input type="text" name="name" placeholder="Ad Soyad" required>
+          <input type="email" name="email" placeholder="E-posta" required>
+          <input type="tel" name="phone" placeholder="Telefon" required>
+          <textarea name="info" placeholder="İşletmeniz hakkında bilgi" rows="6" required style="min-height:120px;"></textarea>
+          <button type="submit" class="primary-btn" style="width:100%;font-size:1.15rem;padding:1.1rem 0;border-radius:1rem;">Gönder</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Modal açma
+  document.getElementById('open-application-modal').onclick = function(e) {
+    e.preventDefault();
+    document.getElementById('application-modal').classList.add('open');
+    setTimeout(() => document.querySelector('#application-modal .feature-modal-content').classList.add('show'), 10);
+  };
+  // Modal kapama
+  document.querySelector('#application-modal .feature-modal-close').onclick = closeAppModal;
+  document.querySelector('#application-modal .feature-modal-backdrop').onclick = closeAppModal;
+  function closeAppModal() {
+    document.querySelector('#application-modal .feature-modal-content').classList.remove('show');
+    setTimeout(() => document.getElementById('application-modal').classList.remove('open'), 250);
+  }
+  // WhatsApp gönderme
+  document.getElementById('application-form').onsubmit = function(e) {
+    e.preventDefault();
+    const name = this.name.value.trim();
+    const email = this.email.value.trim();
+    const phone = this.phone.value.trim();
+    const info = this.info.value.trim();
+    const msg = `Netify Başvuru Formu:%0Aİsim: ${name}%0AE-posta: ${email}%0ATelefon: ${phone}%0Aİşletme Bilgisi: ${info}`;
+    const waUrl = `https://wa.me/905395707502?text=${msg}`;
+    window.open(waUrl, '_blank');
+    closeAppModal();
+  };
+});
+</script>
+</body>
+</html>

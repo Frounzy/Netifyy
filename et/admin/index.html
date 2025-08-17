@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Yönetimi - Netify Admin</title>
+    <link rel="stylesheet" href="../styles/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="admin-panel">
+    <!-- Sol Menü -->
+    <aside class="admin-sidebar">
+        <div class="admin-logo">
+            <svg width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#5865F2"/>
+                        <stop offset="50%" style="stop-color:#4752C4"/>
+                        <stop offset="100%" style="stop-color:#3640A6"/>
+                    </linearGradient>
+                </defs>
+                <path fill="url(#logo-gradient)" d="M5 4C3.89543 4 3 4.89543 3 6V18C3 19.1046 3.89543 20 5 20H19C20.1046 20 21 19.1046 21 18V6C21 4.89543 20.1046 4 19 4H5ZM8.5 9.5C8.5 10.8807 7.38071 12 6 12C7.38071 12 8.5 13.1193 8.5 14.5C8.5 13.1193 9.61929 12 11 12C9.61929 12 8.5 10.8807 8.5 9.5ZM13 9.5C13 10.8807 14.1193 12 15.5 12C14.1193 12 13 13.1193 13 14.5C13 13.1193 11.8807 12 10.5 12C11.8807 12 13 10.8807 13 9.5Z"/>
+            </svg>
+            <span>EG Admin</span>
+        </div>
+        <nav class="admin-nav">
+            <a href="/admin" class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Ana Sayfa</span>
+            </a>
+            <a href="/admin/posts" class="nav-item">
+                <i class="fas fa-blog"></i>
+                <span>Blog Yazıları</span>
+            </a>
+            <a href="/admin/categories" class="nav-item">
+                <i class="fas fa-tags"></i>
+                <span>Kategoriler</span>
+            </a>
+            <a href="/admin/media" class="nav-item">
+                <i class="fas fa-images"></i>
+                <span>Medya</span>
+            </a>
+        </nav>
+        <div class="admin-profile">
+            <div class="profile-info">
+                <img src="../assets/images/admin-avatar.png" alt="Admin">
+                <div class="profile-text">
+                    <strong>Admin</strong>
+                    <span>Yönetici</span>
+                </div>
+            </div>
+            <button id="logoutBtn" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Çıkış Yap</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Ana İçerik -->
+    <main class="admin-main">
+        <header class="main-header">
+            <div class="header-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Blog yazılarında ara...">
+            </div>
+            <div class="header-actions">
+                <button id="newPostBtn" class="new-post-btn">
+                    <i class="fas fa-plus"></i>
+                    Yeni Yazı
+                </button>
+            </div>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- İstatistik Kartları -->
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Toplam Yazı</h3>
+                    <span class="stat-number">24</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Toplam Görüntülenme</h3>
+                    <span class="stat-number">12.5K</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Toplam Yorum</h3>
+                    <span class="stat-number">164</span>
+                </div>
+            </div>
+
+            <!-- Yorum İstatistikleri -->
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Yorumlar</h3>
+                    <span class="stat-number" id="commentCount">0</span>
+                    <span class="stat-trend trend-up">
+                        <i class="fas fa-arrow-up"></i> %12 artış
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Son Eklenen Yazılar -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Son Eklenen Yazılar</h2>
+                <a href="/admin/posts" class="view-all">Tümünü Gör</a>
+            </div>
+            <div class="posts-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Başlık</th>
+                            <th>Kategori</th>
+                            <th>Yazar</th>
+                            <th>Tarih</th>
+                            <th>Durum</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody id="postsTableBody">
+                        <!-- Blog yazıları dinamik olarak eklenecek -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Yorum Yönetimi Sekmesi -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Son Yorumlar</h2>
+                <div class="header-actions">
+                    <select id="commentFilter" class="filter-select">
+                        <option value="all">Tümü</option>
+                        <option value="pending">Onay Bekleyen</option>
+                        <option value="approved">Onaylanmış</option>
+                    </select>
+                </div>
+            </div>
+            <div class="comments-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Yorum</th>
+                            <th>Yazar</th>
+                            <th>Blog Yazısı</th>
+                            <th>Tarih</th>
+                            <th>Durum</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody id="commentsTableBody">
+                        <!-- Yorumlar dinamik olarak eklenecek -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Blog Yazısı Modal -->
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Yeni Blog Yazısı</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="postForm" class="post-form">
+                <div class="form-group">
+                    <label for="postTitle">Başlık</label>
+                    <input type="text" id="postTitle" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="postCategory">Kategori</label>
+                    <select id="postCategory" name="category" required>
+                        <option value="e-ticaret">E-ticaret</option>
+                        <option value="pazarlama">Pazarlama</option>
+                        <option value="teknoloji">Teknoloji</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="postStatus">Durum</label>
+                    <select id="postStatus" name="status">
+                        <option value="published">Yayında</option>
+                        <option value="draft">Taslak</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="postExcerpt">Özet</label>
+                    <textarea id="postExcerpt" name="excerpt" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="postContent">İçerik</label>
+                    <textarea id="postContent" name="content" rows="10" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn">İptal</button>
+                    <button type="submit" class="save-btn">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/admin/main.js"></script>
+</body>
+</html> 
